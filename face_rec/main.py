@@ -77,7 +77,7 @@ def classify_images_with_multiple_folders(reference_image_path, folders, mqtt_cl
     reference_descriptor = get_face_descriptor(reference_image_path)
     if reference_descriptor is None:
         print("未偵測到任何臉部")
-        # 将图片移动到no_face文件夹
+        # 將圖片移動到no_face資料夾
         no_face_path = os.path.join("no_face", os.path.basename(reference_image_path))
         os.rename(reference_image_path, no_face_path)
         mqtt_client.publish(RESULT_TOPIC, "none")
